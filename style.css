@@ -279,3 +279,26 @@ h1 {
     color: #888;
     letter-spacing: 0.5px;
 }
+/* تنظیمات تراز و وسط‌چین کردن بخش اسامی */
+.couple-names {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.names-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.couple-names .nastalig-name {
+  text-align: center;
+  width: 100%;
+}

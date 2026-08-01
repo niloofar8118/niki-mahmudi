@@ -10,6 +10,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* استایل‌های اضافه شده برای قرارگیری گل‌ها در دو طرف متن */
+    .invitation-text-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .flower-icon {
+      width:100px; /* اندازه گل‌ها را بر اساس نیاز کم یا زیاد کنید */
+      height: auto;
+      opacity: 0.85;
+    }
+
+    .flower-icon.flip {
+      transform: scaleX(-1); /* قرینه‌سازی گل سمت چپ برای زیبایی بیشتر */
+    }
+  </style>
 </head>
 <body>
   <main class="invitation">
@@ -30,79 +51,92 @@
         <p class="date">MORDAD 28, 1405</p>
       </div>
     </section>
-<section class="couple-names">
-  <div class="names-wrapper">
-    <h2 class="nastalig-name">نیلوفر و مصطفی</h2>
-   
-  </div>
-  <p class="invitation-text nastalig-name" >شما را به جشن ازدواج خود دعوت می‌کنیم</p>
-</section>
 
-   <section class="location-box">
-  <p class="location-label">لوکیشن تالار</p>
-  <div class="map-container">
-    <!-- نقشه بلد با استایل‌دهی بهتر -->
-    <iframe 
-      src="https://balad.ir/embed?p=6hbJ5EKIXXqjuh" 
-      title="مشاهده «تالار مجلل معین» روی نقشه بلد" 
-      width="100%" 
-      height="300" 
-      frameborder="0" 
-      style="border: 0; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" 
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
-  </div>
-</section>
-<section class="countdown-section">
-  <h2 class="countdown-title">شمارش معکوس تا پیوند ما</h2>
-  <div id="countdown" class="countdown-wrapper">
-    <!-- days, hours, minutes, seconds here -->
-    <div class="time-box">
-      <span id="days">00</span>
-      <p>روز</p>
-    </div>
-    <div class="time-box">
-      <span id="hours">00</span>
-      <p>ساعت</p>
-    </div>
-    <div class="time-box">
-      <span id="minutes">00</span>
-      <p>دقیقه</p>
-    </div>
-   
- <script>
-// تاریخ مراسم (مثال: 28 مرداد 1405 = 19 اوت 2026)
-const weddingDate = new Date("August 19, 2026 18:00:00").getTime();
+    <section class="couple-names">
+      <div class="names-wrapper">
+        <h2 class="nastalig-name">نیلوفر و مصطفی</h2>
+      </div>
 
-const countdown = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
+      <!-- بخش دعوت‌نامه همراه با گل در دو طرف -->
+      <div class="invitation-text-container">
+        <img src="22.png" alt="flower" class="flower-icon flip" />
+        <p class="invitation-text nastalig-name">شما را به جشن ازدواج خود دعوت می‌کنیم</p>
+        <img src="22.png" alt="flower" class="flower-icon" />
+      </div>
+    </section>
 
-    if (distance <= 0) {
-        document.getElementById("countdown").innerHTML = "<h3 style='color:#a67c52;'>زمان جشن فرا رسیده است!</h3>";
-        clearInterval(countdown);
-        return;
-    }
+    <section class="location-box">
+      <p class="location-label">لوکیشن تالار</p>
+      <div class="map-container">
+        <!-- نقشه بلد -->
+        <iframe 
+          src="https://balad.ir/embed?p=6hbJ5EKIXXqjuh" 
+          title="مشاهده «تالار مجلل معین» روی نقشه بلد" 
+          width="100%" 
+          height="300" 
+          frameborder="0" 
+          style="border: 0; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    <section class="countdown-section">
+     
+      <div id="countdown" class="countdown-wrapper">
+        <!-- باکس‌های زمان -->
+        <div class="time-box">
+          <span id="days">00</span>
+          <p>روز</p>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <p>ساعت</p>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <p>دقیقه</p>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <p>ثانیه</p>
+        </div>
+      </div>
+    </section>
 
-    document.getElementById("days").innerText = days.toString().padStart(2, '0');
-    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+    <section class="footer-credit">
+      <div class="names-wrapper">
+        <h4 class="nastalig-name">ساخت این سایت توسط عروس خانوم 😁</h4>
+      </div>
+    </section>
+  </main>
 
-}, 1000);
-</script>
-<section class="couple-names">
-  <div class="names-wrapper">
-    <h4 class="nastalig-name"> ساخت این سایت توسط عروس خانوم 😁 </h4>
-   
-  </div>
-  
-</section>
+  <script>
+    // تاریخ مراسم (28 مرداد 1405 = 19 اوت 2026)
+    const weddingDate = new Date("August 19, 2026 18:00:00").getTime();
+
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance <= 0) {
+            document.getElementById("countdown").innerHTML = "<h3 style='color:#a67c52;'>زمان جشن فرا رسیده است!</h3>";
+            clearInterval(countdown);
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+    }, 1000);
+  </script>
 </body>
 </html>
