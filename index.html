@@ -33,6 +33,9 @@
   </style>
 </head>
 <body>
+  <audio id="bgMusic" loop>
+    <source src="Morvarid Dor Gardanet.mp3" type="audio/mpeg">
+</audio>
   <main class="invitation">
     <section class="hero">
       <div class="overlay"></div>
@@ -54,13 +57,13 @@
 
     <section class="couple-names">
       <div class="names-wrapper">
-        <h2 class="nastalig-name">نیلوفر و مصطفی</h2>
+        <h2 class="font_my">نیلوفر و مصطفی</h2>
       </div>
 
       <!-- بخش دعوت‌نامه همراه با گل در دو طرف -->
       <div class="invitation-text-container">
         <img src="22.png" alt="flower" class="flower-icon flip" />
-        <p class="invitation-text nastalig-name">شما را به جشن ازدواج خود دعوت می‌کنیم</p>
+        <p class="invitation-text font_my">شما را به جشن ازدواج خود دعوت می‌کنیم</p>
         <img src="22.png" alt="flower" class="flower-icon" />
       </div>
     </section>
@@ -105,9 +108,9 @@
       </div>
     </section>
 
-    <section class="footer-credit">
+   <section class="footer-credit">
       <div class="names-wrapper">
-        <h4 class="nastalig-name">ساخت این سایت توسط عروس خانوم 😁</h4>
+        <h4 class="font_my">Site built by Niloufar</h4>😁</h4>
       </div>
     </section>
   </main>
@@ -138,5 +141,13 @@
 
     }, 1000);
   </script>
+  <script>
+const music = document.getElementById("bgMusic");
+
+// اولین کلیک کاربر
+document.addEventListener("click", function () {
+    music.play();
+}, { once: true });
+</script>
 </body>
 </html>
