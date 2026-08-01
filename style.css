@@ -302,3 +302,15 @@ h1 {
   text-align: center;
   width: 100%;
 }
+
+@font-face {
+    font-family: 'danstevis';
+    src: url('./font/danstevis.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.font_my {
+    font-family: 'danstevis';
+    font-size: 3rem;
+    color: #aaa8a8;
+}
