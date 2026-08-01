@@ -305,7 +305,7 @@ h1 {
 
 @font-face {
     font-family: 'danstevis';
-    src: url('./font/danstevis.otf') format('opentype');
+    src: url('danstevis.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
