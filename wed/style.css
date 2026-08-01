@@ -1,0 +1,281 @@
+:root {
+  --bg: #0f0f10;
+  --text: #f5f2ed;
+  --muted: rgba(245, 242, 237, 0.82);
+  --line: rgba(245, 242, 237, 0.55);
+  --panel: rgba(10, 10, 12, 0.72);
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 35%),
+    linear-gradient(180deg, #1a1a1d 0%, #0d0d10 100%);
+  color: var(--text);
+}
+@font-face {
+    font-family: 'IranNastaliq';
+    src: url('font/IranNastaliq.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.nastalig-name {
+    font-family: 'IranNastaliq', cursive;
+    font-size: 3.5rem; /* نستعلیق معمولاً باید بزرگتر باشد */
+    color: #4a4a4a;   /* یک خاکستری تیره یا رنگ طلایی پیشنهاد می‌شود */
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* اگر می‌خواهید رنگ طلاییِ کلاسیک داشته باشید، از این رنگ استفاده کنید: */
+/* color: #C5A059; */
+
+.invitation {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  gap: 14px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: calc(100svh - 32px - 130px);
+  border-radius: 28px;
+  overflow: hidden;
+  background-image: url("11.png"); /* عکس خودت را اینجا بگذار */
+  background-size: cover;
+  background-position: center center;
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 0.18) 35%,
+      rgba(0, 0, 0, 0.62) 72%,
+      rgba(0, 0, 0, 0.88) 100%
+    );
+  z-index: 0;
+}
+
+.hero-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6.5%;
+  z-index: 1;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: clamp(0.72rem, 2.2vw, 0.86rem);
+  letter-spacing: 0.42em;
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 14px;
+  width: min(220px, 70%);
+}
+
+.divider span {
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.divider i {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  transform: rotate(45deg);
+  border: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 11vw, 4.8rem);
+  line-height: 0.9;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.date {
+  margin: 10px 0 0;
+  font-size: clamp(0.72rem, 2.1vw, 0.88rem);
+  letter-spacing: 0.34em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.location-box {
+  width: 100%;
+  max-width: 430px;
+  border-radius: 20px;
+  padding: 16px 18px;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.location-label {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  color: rgba(245, 242, 237, 0.72);
+  text-transform: uppercase;
+}
+
+.location-placeholder {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px dashed rgba(245, 242, 237, 0.28);
+  color: rgba(245, 242, 237, 0.88);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .invitation {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .hero {
+    max-width: 520px;
+    min-height: calc(100svh - 48px - 140px);
+    border-radius: 34px;
+  }
+
+  .location-box {
+    max-width: 520px;
+    padding: 18px 22px;
+  }
+
+  .hero-content {
+    bottom: 7%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-content {
+    padding: 0 18px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.3em;
+  }
+
+  .date {
+    letter-spacing: 0.24em;
+  }
+}
+/********************************************************/
+.countdown-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1f1f20 0%, #252327 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('background-pattern.png') repeat center center;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.countdown-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    min-width: 100px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.time-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.time-box span {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.time-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 0.5px;
+}

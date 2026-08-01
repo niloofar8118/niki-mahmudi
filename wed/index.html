@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="invitation">
+    <section class="hero">
+      <div class="overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">WEDDING HALL</p>
+
+        <div class="divider">
+          <span></span>
+          <i></i>
+          <span></span>
+        </div>
+
+        <h1>MOEIN</h1>
+
+        <p class="date">MORDAD 28, 1405</p>
+      </div>
+    </section>
+<section class="couple-names">
+  <div class="names-wrapper">
+    <h2 class="nastalig-name">نیلوفر و مصطفی</h2>
+   
+  </div>
+  <p class="invitation-text nastalig-name" >شما را به جشن ازدواج خود دعوت می‌کنیم</p>
+</section>
+
+   <section class="location-box">
+  <p class="location-label">لوکیشن تالار</p>
+  <div class="map-container">
+    <!-- نقشه بلد با استایل‌دهی بهتر -->
+    <iframe 
+      src="https://balad.ir/embed?p=6hbJ5EKIXXqjuh" 
+      title="مشاهده «تالار مجلل معین» روی نقشه بلد" 
+      width="100%" 
+      height="300" 
+      frameborder="0" 
+      style="border: 0; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+<section class="countdown-section">
+  <h2 class="countdown-title">شمارش معکوس تا پیوند ما</h2>
+  <div id="countdown" class="countdown-wrapper">
+    <!-- days, hours, minutes, seconds here -->
+    <div class="time-box">
+      <span id="days">00</span>
+      <p>روز</p>
+    </div>
+    <div class="time-box">
+      <span id="hours">00</span>
+      <p>ساعت</p>
+    </div>
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <p>دقیقه</p>
+    </div>
+   
+ <script>
+// تاریخ مراسم (مثال: 28 مرداد 1405 = 19 اوت 2026)
+const weddingDate = new Date("August 19, 2026 18:00:00").getTime();
+
+const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance <= 0) {
+        document.getElementById("countdown").innerHTML = "<h3 style='color:#a67c52;'>زمان جشن فرا رسیده است!</h3>";
+        clearInterval(countdown);
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days.toString().padStart(2, '0');
+    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+}, 1000);
+</script>
+<section class="couple-names">
+  <div class="names-wrapper">
+    <h4 class="nastalig-name"> ساخت این سایت توسط عروس خانوم 😁 </h4>
+   
+  </div>
+  
+</section>
+</body>
+</html>
